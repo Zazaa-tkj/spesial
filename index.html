@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>🌤️ Sweet Seventeen, Ika!</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- SKY -->
+    <div class="sky-bg"></div>
+
+    <!-- MATAHARI -->
+    <div class="sun-container">
+        <div class="sun-rays"></div>
+        <div class="sun-rays"></div>
+        <div class="sun-rays"></div>
+        <div class="sun-lines">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
+        <div class="sun-body"></div>
+    </div>
+
+    <!-- AWAN -->
+    <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+        <div class="cloud cloud-6"></div>
+        <div class="cloud cloud-7"></div>
+        <div class="cloud cloud-8"></div>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="halaman-login">
+        <div class="login-box">
+            <span class="ornamen">✦ ✦ ✦</span>
+            <span class="icon-besar">🌤️</span>
+            <h1>Kamar Khusus</h1>
+            <p class="sub">untuk <strong>Ika Sayang</strong> — yang hari ini genap <strong>17</strong> tahun</p>
+            <input type="password" id="jawaban-login" placeholder="Siapa nama kamu?" autofocus />
+            <button class="btn-buka" onclick="cekLogin()">✦ Buka Pintu ✦</button>
+            <p id="pesan-error">🤍 Aduh, aku nggak kenal kamu...<span class="clue">💡 Coba tulis namamu, sayang. Aku hanya untukmu.</span></p>
+            <p class="hint"><span>✦</span> &nbsp; tulis namamu &nbsp; <span>✦</span></p>
+        </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loadingOverlay">
+        <div class="loading-container">
+            <span class="loading-icon">🌤️</span>
+            <div class="loading-text">Membuka Surat...</div>
+            <div class="loading-sub">untuk Ika Sayang</div>
+            <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+            <div class="progress-label" id="progressLabel">0%</div>
+        </div>
+    </div>
+
+    <!-- GEMBOK EMAS -->
+    <button class="gold-lock" id="goldLock" onclick="bukaLoginRahasia()">
+        <span class="lock-icon">🔒</span>
+    </button>
+
+    <!-- LOGIN RAHASIA -->
+    <div id="loginRahasia">
+        <div class="login-rahasia-box">
+            <button class="close-btn" onclick="tutupLoginRahasia()">✕</button>
+            <span class="icon">🔐</span>
+            <h2>Surat Rahasia</h2>
+            <p class="sub">Masukkan kata sandi untuk membuka</p>
+            <input type="password" id="passwordRahasia" placeholder="••••••" autofocus />
+            <button class="btn-rahasia" onclick="cekLoginRahasia()">✦ Buka ✦</button>
+            <p id="error-rahasia">🤍 Kata sandi salah. Coba lagi ya...</p>
+        </div>
+    </div>
+
+    <!-- PAGE RAHASIA -->
+    <div id="page-rahasia">
+        <div class="rahasia-box">
+            <button class="close-rahasia-btn" onclick="tutupRahasia()">✕</button>
+            <span class="rahasia-icon">💫</span>
+            <div class="rahasia-judul">Surat Rahasia</div>
+            <div class="rahasia-sub">— Hanya Untuk Ika Sayang —</div>
+            <div class="rahasia-body">
+                <p><span class="highlight">Ika Sayang,</span></p>
+                <p>Jika kamu sampai membaca bagian ini, berarti kamu sudah menemukan halaman terakhir dari hadiah kecil yang aku buat untukmu. Sebenarnya ada banyak hal yang ingin aku katakan. Namun terkadang, kata-kata tidak cukup untuk menjelaskan seberapa berharganya seseorang bagi kita.</p>
+                <blockquote>💫 "Aku hanya ingin kamu tahu satu hal. Aku sangat bersyukur pernah dipertemukan denganmu."</blockquote>
+                <p>Dulu, aku adalah seseorang yang tidak terlalu memahami apa itu cinta. Namun kamu datang, dan perlahan mengajarkanku. Kamu membuatku tahu bagaimana rasanya peduli pada seseorang. Bagaimana rasanya ingin menjaga seseorang. Bagaimana rasanya memiliki seseorang yang selalu ingin aku lihat bahagia.</p>
+                <p>Aku tidak pernah menyangka bahwa aku bisa menemukan seseorang seperti kamu. Seseorang yang begitu baik. Begitu perhatian. Begitu tulus. <span class="highlight">Kamu memiliki sesuatu yang membuatku kagum. Sesuatu yang membuatku ingin terus mengenalmu lebih jauh.</span></p>
+                <blockquote>🌹 "Aku tahu, aku bukan seseorang yang sempurna. Aku masih memiliki banyak kekurangan. Namun terima kasih karena sudah menerima aku menjadi bagian dari hidupmu."</blockquote>
+                <p>Di umurmu yang ke-17 ini, aku berharap kamu mendapatkan semua kebahagiaan yang kamu pantas dapatkan. <span class="highlight">Jangan pernah lupa bahwa kamu adalah seseorang yang sangat berarti.</span></p>
+                <blockquote>🤍 "Selamat ulang tahun, Ika Sayang. Terima kasih sudah menjadi cerita terindah yang tidak pernah aku rencanakan. Terima kasih karena sudah membuat aku percaya bahwa cinta itu benar-benar ada."</blockquote>
+            </div>
+            <div class="rahasia-tanda">— Dari seseorang yang selalu menyayangimu 🌹 —</div>
+            <div class="rahasia-mawar"><span>🌹</span> <span>🌹</span> <span>🌹</span></div>
+        </div>
+    </div>
+
+    <!-- APP -->
+    <div id="app">
+        <div class="slides-wrapper" id="slidesWrapper">
+
+            <!-- ===== PORTAL 1 — HOME ===== -->
+            <div id="slide-home" class="slide slide-home active">
+                <div class="slide-header">
+                    <h2>🏠 Sweet Seventeen, Ika Sayang</h2>
+                    <span class="sub">— Selamat datang di hari terindahmu —</span>
+                </div>
+                <div class="slide-content">
+                    <div class="pembuka">🌤️ Halo, Ika Sayang.</div>
+                    <p>Hari ini, 27 Agustus, adalah hari yang sangat istimewa. Hari di mana seseorang bernama <strong>Artika LintangSari</strong> pertama kali hadir di dunia ini. <em>Bagi orang lain, mungkin kamu hanyalah satu dari sekian banyak manusia. Tapi bagiku, kamu adalah seseorang yang memiliki tempat yang berbeda di dalam hati.</em> Aku mengenalmu dengan nama panggilan yang aku berikan sendiri — <strong>Ika</strong>. Nama sederhana yang mungkin tidak memiliki arti besar bagi orang lain. Namun bagiku, nama itu membawa banyak cerita. Karena di balik nama itu, ada seseorang yang berhasil mengubah hidupku. <em>Sebelum mengenalmu, aku tidak pernah tahu bahwa aku bisa begitu tertarik pada sesuatu yang bernama cinta.</em> Aku tidak pernah membayangkan akan ada seseorang yang membuatku penasaran untuk mengenal perasaan itu lebih jauh.</p>
+                    <blockquote>💫 "Namun kemudian kamu datang, dan semuanya berubah. Kamu menjadi alasan pertama aku ingin tahu bagaimana rasanya menyukai seseorang, peduli pada seseorang, dan memiliki seseorang yang ingin selalu aku lihat bahagia."</blockquote>
+                    <p>🤍 <em>Aku tidak pernah menyangka bahwa pertemuan sederhana bisa membawa kita sampai di titik ini.</em> Terima kasih sudah hadir. Terima kasih sudah menjadi alasan hari-hariku terasa lebih berwarna. Dan terima kasih karena sudah menjadi <strong>Ika</strong> yang aku kenal dan sayangi.</p>
+                    <div class="penutup">🌟 Di usia yang ke-17 ini, aku berdoa agar langkahmu selalu diberkahi. Semoga senyum manismu tak pernah pudar. Semoga kau selalu bahagia, Ika Sayang. — Dari seseorang yang sangat bersyukur pernah dipertemukan denganmu. 🤍</div>
+                </div>
+            </div>
+
+            <!-- ===== PORTAL 2 — SURAT ===== -->
+            <div id="slide-surat" class="slide slide-surat">
+                <div class="slide-header">
+                    <h2>💌 Surat Untuk Ika</h2>
+                    <span class="sub">— Tulisan kecil dari hati yang besar —</span>
+                </div>
+                <div class="slide-content">
+                    <div class="pembuka">💌 Untuk Ika Sayang, satu-satunya.</div>
+                    <p>Aku tidak pernah menyangka bahwa suatu hari aku akan menulis surat seperti ini untuk seseorang. <em>Dulu, aku adalah seseorang yang tidak terlalu memikirkan tentang cinta. Bagiku, semua itu hanya sesuatu yang biasa saja.</em> Tapi kemudian aku bertemu denganmu, dan perlahan semua berubah. <em>Kamu adalah satu-satunya perempuan yang membuatku benar-benar ingin mendapatkan cintamu.</em> Bukan karena aku hanya ingin memiliki seseorang di hidupku. Namun karena aku melihat sesuatu yang berbeda darimu. Aku melihat seseorang yang begitu baik, yang selalu berusaha memahami orang lain, yang memiliki hati lembut, dan yang mampu membuatku nyaman hanya dengan menjadi dirimu sendiri.</p>
+                    <blockquote>🌹 "Aku ingat bagaimana awalnya aku tidak pernah menyangka bahwa kita bisa menjadi seperti sekarang. Aku tidak pernah membayangkan bahwa aku akan memiliki peran penting dalam hidupmu."</blockquote>
+                    <p>Dari pertemuan sederhana, aku menemukan seseorang yang mengajarkanku banyak hal — tentang perasaan, tentang menjaga, tentang menghargai. <em>Aku tahu, aku bukan seseorang yang sempurna. Aku masih memiliki banyak kekurangan.</em> Namun satu hal yang selalu aku inginkan: menjadi seseorang yang membuatmu merasa dihargai. Seseorang yang selalu mendukungmu. Seseorang yang ingin melihatmu bahagia.</p>
+                    <div class="penutup">🤍 Terima kasih karena sudah menjadi bagian dari hidupku. Terima kasih karena sudah membuatku mengenal rasa yang sebelumnya tidak pernah aku pahami. Terima kasih karena sudah menjadi Ika yang selalu aku sayangi.</div>
+                </div>
+            </div>
+
+            <!-- ===== PORTAL 3 — TIMELINE ===== -->
+            <div id="slide-timeline" class="slide slide-timeline">
+                <div class="slide-header">
+                    <h2>⏳ Jejak Kita</h2>
+                    <span class="sub">— Dari awal hingga menjadi cerita yang berarti —</span>
+                </div>
+                <div class="slide-content">
+                    <p><em>Setiap cerita pasti memiliki awal. Begitu pula cerita kita.</em> Aku masih tidak menyangka bahwa dari pertemuan yang terlihat sederhana, aku bisa mengenal seseorang yang perlahan menjadi sangat berarti dalam hidupku. <em>Aku tidak pernah merencanakan untuk menemukan seseorang seperti kamu. Namun mungkin, beberapa hal memang tidak bisa dijelaskan oleh akal — hanya bisa disebut sebagai takdir.</em> Awalnya kamu hanyalah seseorang yang aku kenal. Namun semakin aku mengenalmu, semakin aku sadar bahwa kamu berbeda. <em>Ada sesuatu dalam dirimu yang membuatku ingin terus mengenalmu lebih jauh.</em> Cara kamu tersenyum. Cara kamu berbicara. Cara kamu memperlakukan orang lain dengan baik. Semua itu perlahan membuatku sadar bahwa kamu adalah seseorang yang spesial.</p>
+                    <blockquote>🌹 "Ketika akhirnya kita memulai cerita bersama, aku masih merasa tidak percaya bahwa seseorang seperti kamu bisa menjadi bagian dari hidupku."</blockquote>
+                    <p>Aku merasa beruntung. Beruntung karena bisa mengenalmu lebih dekat, berbagi cerita denganmu, tertawa bersamamu, dan memiliki kenangan yang hanya kita berdua yang tahu. <em>Perjalanan kita bukan hanya tentang hari-hari bahagia. Namun tentang bagaimana kita belajar memahami satu sama lain.</em> Setiap momen yang kita lewati menjadi bagian dari cerita yang membuat kita semakin mengenal. Dan bagiku, setiap waktu yang aku habiskan bersamamu adalah sesuatu yang berharga.</p>
+                    <div class="penutup">🕊️ Di hari ulang tahunmu yang ke-17 ini, aku hanya ingin mengatakan: aku bersyukur pernah dipertemukan dengan seseorang seperti kamu. Karena dari sekian banyak orang di dunia ini, aku mendapatkan kesempatan untuk mengenal Ika. 🤍</div>
+                </div>
+            </div>
+
+            <!-- ===== PORTAL 4 — PUISI ===== -->
+            <div id="slide-puisi" class="slide slide-puisi">
+                <div class="slide-header">
+                    <h2>📜 Untuk Ika Sayang</h2>
+                    <span class="sub">— Bait-bait dari hati untukmu —</span>
+                </div>
+                <div class="puisi-box">
+                    <div class="puisi-judul">— Untuk Ika Sayang —</div>
+                    <div class="puisi-sub">✦ Sebuah puisi kecil tentang seseorang yang berarti ✦</div>
+                    <div class="puisi-body">
+                        <span class="baris">Di antara luasnya langit yang membentang,</span>
+                        <span class="baris">di antara banyaknya wajah yang datang dan pergi,</span>
+                        <span class="baris">aku tidak pernah menyangka akan menemukan seseorang</span>
+                        <span class="baris">yang mampu membuat hatiku berhenti mencari.</span>
+                    </div>
+                    <blockquote>💫 "Seseorang yang datang tanpa aku rencanakan, namun perlahan menjadi alasan aku tersenyum. Seseorang yang awalnya hanya sebuah pertemuan sederhana, namun berubah menjadi cerita yang ingin selalu aku ingat."</blockquote>
+                    <div class="puisi-body" style="margin-top:8px;">
+                        <span class="baris" style="font-weight:700;font-style:normal;color:#2c3e50;">Ika...</span>
+                    </div>
+                    <div class="puisi-body" style="margin-top:8px;">
+                        <span class="baris">🌸 Senyummu adalah hal sederhana yang selalu aku suka.</span>
+                        <span class="baris">Namun entah mengapa, ia mampu membuat hatiku tenang.</span>
+                        <span class="baris">Caramu berbicara, caramu peduli,</span>
+                        <span class="baris">dan caramu memperlakukan orang lain dengan baik,</span>
+                        <span class="baris">membuat aku sadar bahwa kamu adalah seseorang yang berbeda.</span>
+                    </div>
+                    <blockquote>✨ "Kamu seperti cahaya kecil di langit malam. Tidak harus menjadi yang paling terang untuk terlihat indah. Karena dengan menjadi dirimu sendiri, kamu sudah cukup untuk membuat seseorang merasa beruntung."</blockquote>
+                    <div class="puisi-body" style="margin-top:8px;">
+                        <span class="baris">Tujuh belas tahun telah kamu jalani,</span>
+                        <span class="baris">dengan cerita yang mungkin tidak selalu mudah.</span>
+                        <span class="baris">Ada tawa yang kamu simpan sebagai kenangan.</span>
+                        <span class="baris">Ada air mata yang mungkin pernah kamu sembunyikan.</span>
+                    </div>
+                    <div class="puisi-body" style="margin-top:8px;">
+                        <span class="baris">🌟 Namun hari ini, izinkan aku berharap untukmu.</span>
+                        <span class="baris">Semoga langkahmu selalu dipenuhi kebahagiaan.</span>
+                        <span class="baris">Semoga impianmu menemukan jalannya.</span>
+                        <span class="baris">Semoga senyummu selalu memiliki alasan untuk hadir.</span>
+                        <span class="baris">Semoga hatimu selalu dijaga oleh hal-hal baik.</span>
+                    </div>
+                    <blockquote>💕 "Karena bagiku... Kamu bukan hanya seseorang yang aku sayangi. Kamu adalah seseorang yang membuatku percaya bahwa sebuah pertemuan sederhana bisa menjadi sesuatu yang sangat berarti."</blockquote>
+                    <div class="puisi-body" style="margin-top:10px; font-style:normal;">
+                        <span class="baris" style="font-weight:700;font-size:16px;color:#2c3e50;">🌹 Selamat ulang tahun ke-17, Ika Sayang.</span>
+                        <span class="baris" style="font-weight:400;font-size:13px;color:#3D5A73;font-style:italic;">Tetaplah menjadi kamu. Karena dunia tidak membutuhkan seseorang yang sempurna.</span>
+                        <span class="baris" style="font-weight:600;font-size:15px;color:#2c3e50;">Dunia hanya membutuhkan Ika yang selalu menjadi dirinya sendiri.</span>
+                    </div>
+                    <div class="puisi-penutup">— Dari seseorang yang selalu menyayangimu 🤍</div>
+                </div>
+            </div>
+
+            <!-- ===== PORTAL 5 — NOVEL ===== -->
+            <div id="slide-novel" class="slide slide-novel">
+                <div class="slide-header">
+                    <h2>📖 Ika Sayang — Kisah yang Tidak Pernah Aku Rencanakan</h2>
+                    <span class="sub">— Sebuah cerita kecil tentang seseorang yang mengubah banyak hal —</span>
+                </div>
+                <div class="novel-box">
+                    <div class="novel-bagian">
+                        <div class="novel-bab">📖 Bab 1 — Pertemuan yang Tidak Terduga</div>
+                        <div class="novel-teks">
+                            <em>Ada banyak pertemuan dalam hidup seseorang. Beberapa hanya berlalu begitu saja. Beberapa hanya menjadi kenangan singkat. Namun ada juga pertemuan yang perlahan mengubah cara seseorang melihat dunia.</em> Bagiku, pertemuan denganmu adalah salah satu hal yang tidak pernah aku duga sebelumnya.
+                            <blockquote>💫 "Aku tidak pernah berpikir bahwa aku akan menemukan seseorang yang membuatku ingin mengenal cinta lebih jauh. Aku tidak pernah berpikir bahwa akan ada seseorang yang membuatku ingin menjaga, memperhatikan, dan selalu berharap dia baik-baik saja."</blockquote>
+                            Namun kemudian aku bertemu denganmu, Ika. Awalnya aku hanya merasa penasaran. Aku ingin mengenalmu lebih jauh. Ingin tahu seperti apa dirimu. Ingin memahami mengapa ada sesuatu yang berbeda darimu.
+                        </div>
+                    </div>
+                    <div class="novel-bagian">
+                        <div class="novel-bab">💕 Bab 2 — Ketika Kamu Mulai Berarti</div>
+                        <div class="novel-teks">
+                            <em>Semakin lama aku mengenalmu, semakin aku sadar bahwa kamu bukan hanya seseorang yang menarik perhatianku. Kamu adalah seseorang yang membuat hatiku nyaman.</em> Kebaikanmu, perhatianmu, caramu memperlakukan orang lain — semua itu membuatku semakin kagum.
+                            <blockquote>✨ "Kamu memiliki sesuatu yang tidak semua orang punya. Kamu memiliki hati yang lembut dan cara sederhana untuk membuat orang lain merasa dihargai."</blockquote>
+                            Tanpa aku sadari, seseorang yang awalnya hanya aku kenal, perlahan menjadi seseorang yang sangat berarti.
+                        </div>
+                    </div>
+                    <div class="novel-bagian">
+                        <div class="novel-bab">🌹 Bab 3 — Memiliki Cerita Bersamamu</div>
+                        <div class="novel-teks">
+                            <em>Aku tidak pernah membayangkan bahwa kita bisa sampai sejauh ini. Aku tidak pernah berpikir bahwa aku akan menjadi seseorang yang memiliki tempat dalam hidupmu.</em> Rasanya begitu luar biasa ketika mengetahui bahwa aku bisa menjadi bagian kecil dari cerita hidupmu.
+                            <blockquote>💫 "Banyak hal yang sudah kita lewati. Banyak cerita yang hanya kita berdua yang mengerti. Banyak momen sederhana yang mungkin terlihat biasa bagi orang lain, namun memiliki arti besar bagiku."</blockquote>
+                            <em>Karena terkadang, hal paling berharga bukanlah sesuatu yang mahal atau besar. Namun waktu yang kita habiskan bersama seseorang yang kita sayangi.</em>
+                        </div>
+                    </div>
+                    <div class="novel-penutup">🤍 Untuk Ika Sayang, dengan segala cinta.</div>
+                </div>
+            </div>
+
+            <!-- ===== PORTAL 6 — GALERI ===== -->
+            <div id="slide-galeri" class="slide slide-galeri">
+                <div class="slide-header">
+                    <h2>🖼️ Potongan Cerita Kita</h2>
+                    <span class="sub">— Setiap foto menyimpan cerita —</span>
+                </div>
+                <div class="galeri-deskripsi">
+                    <p>📸 <em>Foto mungkin hanya terlihat seperti sebuah gambar bagi orang lain. Hanya sebuah momen yang berhenti dalam waktu.</em> Namun bagiku, setiap foto memiliki cerita tersendiri. Ada perasaan, kenangan, dan kebahagiaan yang tersimpan di balik setiap momen yang pernah kita lewati.</p>
+                    <blockquote>💫 "Setiap senyum yang tertangkap dalam foto mengingatkanku bahwa ada seseorang yang pernah membuat hari-hariku terasa lebih menyenangkan. Ada seseorang yang membuat momen sederhana terasa lebih berarti — hanya karena aku menjalaninya bersamamu."</blockquote>
+                    <p><em>Aku mungkin tidak bisa menyimpan semua waktu yang pernah kita lewati. Namun aku bersyukur memiliki beberapa bagian kecil yang bisa mengingatkanku tentang cerita kita.</em> Tentang tawa. Tentang percakapan. Tentang momen-momen sederhana yang menjadi sesuatu yang berharga.</p>
+                    <blockquote>✨ "Semoga suatu hari nanti, ketika kamu melihat kembali foto-foto ini, kamu tidak hanya melihat sebuah gambar. Namun juga mengingat bahwa pernah ada seseorang yang sangat bahagia karena bisa memiliki kenangan bersamamu."</blockquote>
+                </div>
+                <div style="margin-top:12px; font-weight:600; color:#2c3e50; text-align:center; font-size:14px;">Beberapa potongan kecil tentang Ika:</div>
+                <div class="galeri-list" style="margin-top:8px;">
+                    <div class="galeri-item"><span class="galeri-label">🌹 Senyummu — Salah satu hal sederhana yang selalu berhasil membuatku bahagia. Senyum yang mungkin terlihat biasa, namun selalu memiliki tempat spesial di hatiku.</span></div>
+                    <div class="galeri-item"><span class="galeri-label">🍦 Momen sederhana bersama — Karena terkadang, hal kecil menjadi lebih berharga ketika dilakukan bersama seseorang yang kita sayangi.</span></div>
+                    <div class="galeri-item"><span class="galeri-label">🌅 Cerita yang pernah kita buat — Setiap waktu yang kita lewati adalah bagian dari perjalanan yang tidak akan pernah aku lupakan.</span></div>
+                </div>
+                <p style="text-align:center; margin-top:12px; font-size:11px; color:#7A9BB5; letter-spacing:0.5px;">* ganti dengan foto kalian berdua ya ✦</p>
+            </div>
+
+            <!-- ===== PORTAL 7 — KADO ===== -->
+            <div id="slide-kado" class="slide slide-kado">
+                <div class="slide-header">
+                    <h2>🎁 Sebuah Kejutan Untuk Ika</h2>
+                    <span class="sub">— Sesuatu yang dibuat dengan penuh rasa sayang —</span>
+                </div>
+                <div class="kado-box">
+                    <div class="kado-ornamen">✦ ✦ ✦</div>
+                    <div class="kotak-kado" id="kotakKado" onclick="bukaKado()">🎁</div>
+                    <div class="pesan-kado" id="pesanKado">
+                        <div class="kado-judul">🎀 Untuk <span class="heart">❤️</span> Ika Sayang</div>
+                        <div class="kado-sub">
+                            Ika Sayang, mungkin apa yang aku berikan ini bukanlah sesuatu yang paling mahal atau paling sempurna.
+                            <blockquote>💝 "Namun aku membuatnya dengan sesuatu yang lebih penting: waktu, usaha, dan rasa sayang yang aku punya untukmu."</blockquote>
+                            Aku ingin memberikan sesuatu yang bukan hanya bisa kamu lihat, namun juga bisa kamu rasakan. Sebuah pengingat bahwa ada seseorang yang sangat bersyukur karena pernah mengenalmu dan memiliki kesempatan untuk menjadi bagian kecil dalam hidupmu.
+                            <blockquote>✨ "Dari sekian banyak orang yang ada di dunia ini, aku merasa beruntung karena bisa bertemu denganmu. Aku beruntung bisa mengenal seseorang seperti <strong>Ika</strong>. Seseorang yang begitu baik, perhatian, dan mampu membuatku merasakan sesuatu yang sebelumnya tidak pernah aku pahami."</blockquote>
+                            <em>Terima kasih sudah menjadi seseorang yang berarti. Terima kasih sudah memberikan warna baru dalam hidupku. Terima kasih karena sudah membuatku memiliki alasan untuk tersenyum.</em> Di hari ulang tahunmu ini, aku tidak hanya memberikan sebuah hadiah.
+                            <blockquote>💫 "Aku memberikan doa terbaikku untukmu."</blockquote>
+                            🌟 <em>Semoga kamu selalu bahagia. Semoga kamu selalu dikelilingi orang-orang yang menyayangimu. Semoga semua hal baik selalu menemukan jalan menuju kamu.</em>
+                        </div>
+                        <div class="kado-romantis"><span>✦</span> untuk selamanya <span>✦</span></div>
+                        <div class="kado-mawar"><span>🌹</span> <span>🌹</span> <span>🌹</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav" id="bottomNav">
+            <button class="nav-item active" data-slide="home"><span class="icon"><i class="fas fa-home"></i></span><span class="label">Home</span></button>
+            <button class="nav-item" data-slide="surat"><span class="icon"><i class="fas fa-envelope"></i></span><span class="label">Surat</span></button>
+            <button class="nav-item" data-slide="timeline"><span class="icon"><i class="fas fa-map-pin"></i></span><span class="label">Jejak</span></button>
+            <button class="nav-item" data-slide="puisi"><span class="icon"><i class="fas fa-feather"></i></span><span class="label">Puisi</span></button>
+            <button class="nav-item" data-slide="novel"><span class="icon"><i class="fas fa-book"></i></span><span class="label">Novel</span></button>
+            <button class="nav-item" data-slide="galeri"><span class="icon"><i class="fas fa-images"></i></span><span class="label">Galeri</span></button>
+            <button class="nav-item" data-slide="kado"><span class="icon"><i class="fas fa-gift"></i></span><span class="label">Kado</span></button>
+        </nav>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
